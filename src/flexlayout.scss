@@ -1,0 +1,55 @@
+@use "sass:math";
+
+html{
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.box-container-flex{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: wheat;
+}
+
+@for $i from 1 through 12 {
+  .box-#{$i}{
+    width: math.div($i * 100%, 12);
+    background-color: aqua;
+  }
+}
+
+@media screen and (min-width:30em) {
+  @for $i from 1 through 12 {
+    .box-sm-#{$i}{
+      width: math.div($i * 100%, 12);
+      background-color: royalblue;
+    }
+  }
+}
+
+@media screen and (min-width:48em) {
+  @for $i from 1 through 12 {
+    .box-md-#{$i}{
+      width: math.div($i * 100%, 12);
+      background-color: blue;
+    }
+  }
+}
+
+@media screen and (min-width:62em) {
+  @for $i from 1 through 12 {
+    .box-lg-#{$i}{
+      width: math.div($i * 100%, 12);
+      background-color: blueviolet;
+    }
+  }
+}
+
+@media screen and (min-width:75em) {
+  @for $i from 1 through 12 {
+    .box-xl-#{$i}{
+      width: math.div($i * 100%, 12);
+      background-color: gray;
+    }
+  }
+}
