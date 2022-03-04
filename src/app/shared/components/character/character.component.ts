@@ -45,6 +45,7 @@ export class CharacterComponent implements OnInit, OnDestroy {
 
     if(this.data.action == 'watch'){
       this.action = this.data.action;
+      this.title = 'View character';
       const _subscriber$ = this._characterUseCase.getCharacterById(this.data.value).subscribe((p) => {
         this.characterForm.setValue(p);
         this.characterForm.disable();
@@ -54,6 +55,7 @@ export class CharacterComponent implements OnInit, OnDestroy {
     }
 
     if(this.data.action == 'edit'){
+      this.title = 'Edit character';
       this.action = this.data.action;
       const _subscriber$ = this._characterUseCase.getCharacterById(this.data.value).subscribe((p) => {
         this.characterForm.setValue(p);
