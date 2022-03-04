@@ -1,0 +1,113 @@
+<body>
+      <form [formGroup]="characterForm" autocomplete="off" class="box-container-flex">
+        <div class="title-form box-12 box-sm-12 box-md-12">
+          <p>{{title}}</p>
+        </div>
+        <div class="form1 box-12 box-sm-12 box-md-6">
+          <div class="item">
+            <mat-label>name</mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput required formControlName="name" [errorStateMatcher]="matcherError">
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error *ngIf="name!.invalid">
+              <p>Invalid attribute</p>
+            </mat-error>
+          </mat-form-field>
+          </div>
+
+         <div class="item">
+          <mat-label>species</mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput required formControlName="species" [errorStateMatcher]="matcherError">
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error *ngIf="species!.invalid">
+              <p>Invalid attribute</p>
+            </mat-error>
+          </mat-form-field>
+         </div>
+
+         <div class="item">
+          <mat-label>status</mat-label>
+          <div class="box-status">
+            <mat-radio-group formControlName="status">
+              <mat-radio-button *ngFor="let item of state" [value]="item"><p>{{item}}</p></mat-radio-button>
+          </mat-radio-group>
+          </div>
+
+        </div>
+
+          <div class="item">
+            <mat-label>gender</mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput required formControlName="gender" [errorStateMatcher]="matcherError">
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error *ngIf="gender!.invalid">
+              <p>Invalid attribute</p>
+            </mat-error>
+          </mat-form-field>
+          </div>
+          <div class="item">
+            <mat-label>image</mat-label>
+          <mat-form-field appearance="outline">
+            <mat-select formControlName="image">
+              <mat-option *ngFor="let item of images" [value]="item.url">
+                <img [src]="item.url" alt="character">{{item.name}}
+              </mat-option>
+            </mat-select>
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error *ngIf="image!.invalid">
+              <p>Invalid attribute</p>
+            </mat-error>
+          </mat-form-field>
+          </div>
+        </div>
+
+        <div class="form2 box-12 box-sm-12 box-md-6">
+          <div class="image">
+            <img [src]="image?.value?image!.value:'/assets/resources/select_file.png'" alt="">
+          </div>
+          <form formGroupName="contact" autocomplete="off">
+           <div class="item">
+            <mat-label>phone</mat-label>
+            <mat-form-field appearance="outline">
+              <input matInput required formControlName="phone" [errorStateMatcher]="matcherError">
+              <mat-icon matSuffix>person</mat-icon>
+              <mat-error *ngIf="contact?.get('phone')?.invalid">
+                <p>Invalid attribute</p>
+              </mat-error>
+            </mat-form-field>
+           </div>
+
+            <div class="item">
+              <mat-label>address</mat-label>
+            <mat-form-field appearance="outline">
+              <input matInput required formControlName="address" [errorStateMatcher]="matcherError">
+              <mat-icon matSuffix>person</mat-icon>
+              <mat-error *ngIf="contact?.get('address')?.invalid">
+                <p>Invalid attribute</p>
+              </mat-error>
+            </mat-form-field>
+            </div>
+
+            <div class="item">
+              <mat-label>country</mat-label>
+            <mat-form-field appearance="outline">
+              <input matInput required formControlName="country" [errorStateMatcher]="matcherError">
+              <mat-icon matSuffix>person</mat-icon>
+              <mat-error *ngIf="contact?.get('country')?.invalid">
+                <p>Invalid attribute</p>
+              </mat-error>
+            </mat-form-field>
+            </div>
+          </form>
+        </div>
+        <div *ngIf="action == 'create'" class="actions box-12 box-sm-12 box-md-12">
+          <button class="btn-actions-cancel" mat-raised-button (click)="cancel()">Cancel</button>
+          <button class="btn-actions-agg" mat-raised-button (click)="save()">Save</button>
+        </div>
+        <div *ngIf="action == 'edit'" class="actions box-12 box-sm-12 box-md-12">
+          <button class="btn-actions-cancel" mat-raised-button (click)="cancel()">Cancel</button>
+          <button class="btn-actions-agg" mat-raised-button (click)="edit()">Update</button>
+        </div>
+      </form>
+</body>

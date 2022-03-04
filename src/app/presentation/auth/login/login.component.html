@@ -1,1 +1,43 @@
-<p>login works!</p>
+<body>
+  <mat-card class="container">
+    <div class="titulo">
+      <h1>Login</h1>
+      <h6>Welcome, user</h6>
+    </div>
+    <form [formGroup]="loginForm" autocomplete="off">
+      <mat-form-field appearance="outline">
+        <mat-label>email</mat-label>
+            <input matInput
+                   type="email"
+                   required
+                   formControlName="correo"
+                   name="user"
+                   [errorStateMatcher]="matcherError"
+                   placeholder="type here your email">
+                   <mat-error *ngIf="correo!.invalid">
+                     invalid
+                   </mat-error>
+            <mat-icon matSuffix color="primary">email</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>password</mat-label>
+            <input matInput
+                   [type]="!isChecked?'password':'text'"
+                   required
+                   name="clave"
+                   formControlName="clave"
+                   [errorStateMatcher]="matcherError"
+                   placeholder="type here your password">
+                   <mat-error *ngIf="clave!.invalid">
+                    invalid
+                  </mat-error>
+            <mat-icon matSuffix color="primary" (click)="changeProperty()">{{type}}</mat-icon>
+      </mat-form-field>
+
+      <button class="button-login" mat-raised-button color="primary" (click)="iniciarSesion()">Login <mat-icon matSuffix>login</mat-icon></button>
+
+    </form>
+
+  </mat-card>
+  </body>
+

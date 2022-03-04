@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  HOST: 'https://www.fruityvice.com/api/fruit'
+  HOST: 'https://rickandmortyapi.com/api/character'
 };

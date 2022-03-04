@@ -1,0 +1,46 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-sidenav-container {
+  flex: 1;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-icon{
+  width: 24px !important;
+  height: 24px !important;
+}
+
+
+.button-redirections{
+  width: calc(100% - 2rem);
+  margin: 1rem;
+  height: 2.5rem;
+  color: white;
+  background-color: #D00511;
+
+  mat-icon{
+    color: white;
+  }
+}
+
+.button-active{
+  background-color: rgb(184, 184, 184);
+  color: #D00511;
+  mat-icon{
+    color: #D00511;
+  }
+}

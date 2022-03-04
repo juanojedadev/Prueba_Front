@@ -38,3 +38,29 @@ $pruebafront-theme: mat.define-light-theme((
 
 html, body { height: 100%; font-size: 16px; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::-webkit-scrollbar {
+  width: .7rem;
+  height: .7rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1rem;
+}
+
+.class-dialog .mat-dialog-container {
+  padding: 1rem;
+  border-radius: 2rem !important;
+}
+
+p,mat-label, input, th, td{
+  font-family: 'M PLUS 2';
+  font-weight: 800;
+}

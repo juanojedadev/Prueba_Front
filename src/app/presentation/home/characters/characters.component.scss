@@ -1,0 +1,178 @@
+body{
+  min-height: 100%;
+}
+
+.content{
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  display: flex;
+
+  .character-table{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+
+    .table-container{
+      position: relative;
+      width: 100%;
+
+      .head-table-character{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        min-height: 3rem;
+        border-radius: 1.2rem 1.2rem 0 0;
+        background: linear-gradient(145deg,#D00511 20%, #A8020C 80%);
+
+        .title{
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          p{
+            font-size: 1.5rem;
+            margin: 0;
+            color: white;
+            font-weight: bold;
+            padding-left: 2rem;
+          }
+        }
+
+        .search{
+          position: relative;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+
+          mat-form-field{
+            width: calc(100% - 6rem);
+          }
+
+          button{
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(145deg, #7C7C7C 20%, #5F5D5D 80%);
+          }
+
+          ::ng-deep .mat-form-field-wrapper{
+            padding-bottom: 0 !important;
+            color: white;
+            font-weight: bold;
+            mat-icon{
+              padding-top: .7rem !important;
+              color: white;
+            }
+          }
+
+          ::ng-deep .mat-form-field-outline-start {
+            border-radius: 28px 0 0 28px !important;
+            min-width: 28px !important;
+          }
+
+          ::ng-deep .mat-form-field-outline-end {
+            border-radius: 0 28px 28px 0 !important;
+          }
+
+          ::ng-deep .mat-form-field-infix{
+            padding-top: .2rem !important;
+            margin: 0 !important;
+          }
+
+          ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+            color: white;
+            stroke-width: 2rem;
+          }
+        }
+
+      }
+
+      .table-data{
+        position: relative;
+        width: 100%;
+        overflow: auto;
+
+        table{
+          width: 100%;
+          min-width: 50rem;
+
+          td{
+            width: 200px;
+            height: 4rem;
+            text-align: center;
+          }
+
+          th{
+            width: 200px;
+            text-align: center !important;
+            font-weight: bold;
+            color: #D00511;
+            text-transform: uppercase;
+          }
+
+          th.mat-header-cell {
+            text-align: center !important;
+          }
+
+          .mat-table-sticky-border-elem-right {
+            border-left: 1px solid #e0e0e0;
+          }
+
+          .mat-table-sticky-border-elem-left {
+            border-right: 1px solid #e0e0e0;
+          }
+
+          .mat-column-image{
+            position: relative;
+            width: 4rem;
+            text-align: center;
+            padding: .5rem !important;
+            img{
+              margin-top: .2rem;
+              width: 3rem;
+              height: 3rem;
+              border-radius: 3rem;
+              border: .2rem solid #A8020C;
+            }
+          }
+
+          .mat-column-identificacion{
+            background-color: #F3F6FE;
+            color: black;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            width: 10rem !important;
+            cursor: pointer;
+          }
+
+          .mat-column-actions {
+            background-color: #F3F6FE;
+            button{
+              width: 2rem;
+              height: 2rem;
+              background: #D00511;
+              -webkit-box-shadow: 9px 9px 9px -7px rgba(0,0,0,0.38);
+              box-shadow: 9px 9px 9px -7px rgba(0,0,0,0.38);
+              margin: .2rem;
+              mat-icon{
+                font-size: calc(1rem);
+              }
+            }
+          }
+
+          .mat-cell{
+            padding: 0;
+          }
+        }
+      }
+      mat-paginator{
+        color: #A8020C !important;
+      }
+    }
+  }
+}
+

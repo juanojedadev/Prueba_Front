@@ -1,0 +1,25 @@
+<div class="example-container">
+  <mat-toolbar class="example-toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+      <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #sidenav style="width: 250px">
+
+      <mat-nav-list>
+        <button class="button-redirections" (click)="sidenav.toggle()" [routerLink]="['/home/welcome']" routerLinkActive="button-active" mat-raised-button >Home <mat-icon class="mat-18">home</mat-icon></button>
+        <button class="button-redirections" (click)="sidenav.toggle()" [routerLink]="['/home/characters']" routerLinkActive="button-active" mat-raised-button >Characteres <mat-icon class="mat-18">persons</mat-icon></button>
+        <button class="button-redirections" (click)="closeSession()" routerLinkActive="button-active" mat-raised-button >Logout <mat-icon class="mat-18">logout</mat-icon></button>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
